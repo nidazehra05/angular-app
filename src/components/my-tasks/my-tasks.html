@@ -1,0 +1,30 @@
+<section class="my-tasks">
+  <div class="tasks-header">
+    <h4>Task List</h4>
+  </div>
+  <div class="controls">
+    <mat-form-field appearance="outline" class="search-field">
+      <input matInput placeholder="Search tasks" />
+    </mat-form-field>
+
+    <app-extended-fab-button
+      label="Add Tasks"
+      icon="add"
+      color="primary"
+      (click)="addTask()">
+    </app-extended-fab-button>
+  </div>
+
+  <div class="card">
+    <app-material-table
+      [columns]="tableColumns"
+      [data]="tasks"
+      [pageSizeOptions]="[5,10,25]"
+      [pageSize]="10"
+      (edit)="onTableEdit($event)"
+      (delete)="onTableDelete($event)"
+      (rowClick)="onRowClick($event)">
+    </app-material-table>
+  </div>
+
+</section>

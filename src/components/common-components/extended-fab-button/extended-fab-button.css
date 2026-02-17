@@ -1,0 +1,38 @@
+:host {
+  display: inline-block;
+}
+
+.extended-fab {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 14px;
+  height: 48px;
+  min-width: 56px;
+  box-shadow: 0 6px 18px rgba(16,24,40,0.12);
+}
+
+.extended-fab .fab-icon {
+  font-size: 20px;
+}
+
+.extended-fab .fab-label {
+  font-weight: 500;
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+/* hide inline label; tooltip provided by title attribute */
+.extended-fab .fab-label {
+  display: none;
+}
+
+.extended-fab.mat-mini-fab {
+  height: 40px;
+  padding: 0 10px;
+}
+
+/* Ensure good contrast when used on colored backgrounds */
+.extended-fab[disabled] {
+  opacity: 0.6;
+}

@@ -1,0 +1,123 @@
+:host {
+  display: block;
+}
+
+.my-tasks {
+  padding: 16px;
+}
+
+/* card look for tasks area */
+.my-tasks .card {
+  background: var(--color-surface);
+  padding: 18px;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(16,24,40,0.04);
+}
+
+.my-tasks h2 {
+  margin: 0 0 12px 0;
+}
+
+mat-list-item {
+  color: var(--color-text-primary);
+}
+
+
+.tasks-header {
+  margin-bottom: 8px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: flex-start;
+  margin-bottom: 12px;
+  width: 100%;
+}
+
+.search-field {
+  flex: 1 1 auto;
+  width: 100%;
+  max-width: none;
+}
+
+.add-btn {
+  background: var(--color-primary);
+  color: var(--color-primary-contrast);
+  flex: 0 0 auto;
+}
+
+.add-btn mat-icon {
+  margin-right: 6px;
+}
+
+.tasks-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+}
+
+.tasks-table thead th {
+  text-align: left;
+  padding: 10px 12px;
+  font-weight: 600;
+  background: transparent;
+  color: var(--color-text-primary);
+}
+
+.tasks-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  vertical-align: middle;
+}
+
+/* zebra rows */
+.tasks-table tbody tr:nth-child(odd) {
+  background: rgba(0,0,0,0.02);
+}
+
+.tasks-table tbody tr:hover {
+  background: rgba(0,0,0,0.04);
+}
+
+.tasks-table .actions button {
+  margin-right: 8px;
+}
+
+.tasks-table .actions mat-icon {
+  color: rgba(0,0,0,0.6);
+}
+
+.status-chip {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.status-done {
+  background: var(--color-success);
+  color: white;
+}
+
+.status-pending {
+  background: var(--color-warning, #ffeb3b);
+  color: rgba(0,0,0,0.87);
+}
+
+.status-rejected {
+  background: var(--color-warn);
+  color: white;
+}
+
+.status-inprogress {
+  background: var(--color-info);
+  color: white;
+}
+
+.status-open {
+  background: var(--color-open, var(--color-surface, #e0e0e0));
+  color: var(--color-text-primary);
+}

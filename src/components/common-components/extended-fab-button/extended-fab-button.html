@@ -1,0 +1,11 @@
+<button
+  mat-fab
+  [color]="color"
+  [attr.aria-label]="label"
+  [attr.title]="label"
+  [class.mat-mini-fab]="mini"
+  class="extended-fab"
+  (click)="onClick($event)">
+  <mat-icon class="fab-icon">{{ icon }}</mat-icon>
+  <span class="fab-label" aria-hidden="true">{{ label }}</span>
+</button>

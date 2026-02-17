@@ -1,0 +1,32 @@
+/* Centralized color variables for the application */
+:root {
+  /* Core brand */
+  --color-primary: #3f51b5; /* indigo */
+  --color-primary-contrast: #ffffff;
+  --color-accent: #e91e63; /* pink */
+  --color-warn: #f44336; /* red */
+
+  /* Surfaces and backgrounds */
+  --color-background: #fafafa;
+  --color-surface: #ffffff;
+
+  /* Text */
+  --color-text-primary: rgba(0,0,0,0.87);
+  --color-text-secondary: rgba(0,0,0,0.6);
+  --color-text-disabled: rgba(0,0,0,0.38);
+
+  /* Status */
+  --color-success: #4caf50;
+  --color-info: #2196f3;
+  --color-warning: #ff9800;
+  --color-open: #e0e0e0;
+
+  /* Layout helpers */
+  --toolbar-height: 64px;
+  --toolbar-height-mobile: 56px;
+}
+
+/* Utility classes for quick usage in templates */
+.bg-primary { background-color: var(--color-primary); color: var(--color-primary-contrast); }
+.text-primary { color: var(--color-text-primary); }
+.text-secondary { color: var(--color-text-secondary); }

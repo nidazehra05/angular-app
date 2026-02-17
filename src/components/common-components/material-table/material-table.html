@@ -1,0 +1,45 @@
+<div class="material-table">
+  <div class="table-tools">
+    <div class="left">
+      <ng-content select="[table-toolbar]"></ng-content>
+    </div>
+    <div class="right">
+      <mat-form-field appearance="fill" class="filter-field">
+        <input matInput (input)="applyFilter($any($event.target).value)" placeholder="Filter" />
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z1">
+
+      <ng-container *ngFor="let col of columns" [matColumnDef]="col.key" [sticky]="col.sticky">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ col.label }}</th>
+        <td mat-cell *matCellDef="let element">
+          <ng-container *ngIf="col.key === 'status'; else defaultCell">
+            <span class="status-chip" [ngClass]="getStatusClass(element[col.key])">{{ element[col.key] }}</span>
+          </ng-container>
+          <ng-template #defaultCell>{{ element[col.key] }}</ng-template>
+        </td>
+      </ng-container>
+
+      <!-- Actions column -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let element" class="actions">
+          <button mat-icon-button color="primary" aria-label="Edit" (click)="onEdit(element)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" aria-label="Delete" (click)="onDelete(element)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onRowClick(row)"></tr>
+    </table>
+  </div>
+
+  <mat-paginator [pageSizeOptions]="pageSizeOptions" [pageSize]="pageSize" showFirstLastButtons></mat-paginator>
+</div>

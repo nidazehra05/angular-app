@@ -1,0 +1,87 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+
+.vertical-menu {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 8px 0;
+  overflow: auto; /* allow scrolling when items exceed viewport */
+  background: var(--color-primary);
+  color: var(--color-primary-contrast);
+}
+
+.vertical-menu .brand {
+  padding: 16px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  flex: 0 0 auto;
+}
+
+.vertical-menu {
+  padding-top: 12px;
+}
+
+.vertical-menu .brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.12);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.vertical-menu .mat-nav-list .mat-list-item,
+.menu-item {
+  color: var(--color-primary-contrast);
+}
+
+.vertical-menu mat-icon {
+  color: var(--color-primary-contrast);
+  margin-right: 12px;
+}
+
+mat-divider {
+  background-color: rgba(255,255,255,0.12);
+}
+
+.vertical-menu .mat-nav-list {
+  padding: 0;
+}
+
+.menu-item {
+  cursor: pointer;
+  user-select: none;
+  flex: 0 0 auto;
+}
+
+.menu-item:hover {
+  /* lighter overlay suitable for dark primary background */
+  background: rgba(255,255,255,0.08);
+}
+
+/* Active menu item */
+.menu-item.active {
+  background: rgba(255,255,255,0.12);
+  border-left: 4px solid rgba(255,255,255,0.18);
+}
+
+.vertical-menu .mat-nav-list {
+  padding-top: 8px;
+}
+
+mat-divider {
+  margin: 8px 0;
+}

@@ -1,0 +1,107 @@
+:host {
+	display: block;
+	width: 100%;
+}
+
+/* Make the Material toolbar span the full width of the viewport/container */
+mat-toolbar {
+	width: 100%;
+	max-width: 100%;
+	box-sizing: border-box;
+	padding-left: 16px;
+	padding-right: 16px;
+
+  /* Use primary color from centralized variables */
+  background-color: var(--color-primary) !important;
+  color: var(--color-primary-contrast) !important;
+}
+
+/* Ensure toolbar icons and buttons inherit the toolbar text color */
+/* mat-toolbar .example-icon,
+mat-toolbar button,
+mat-toolbar mat-icon {
+  color: inherit !important;
+} */
+
+/* Ensure the spacer expands to push content to the edges */
+.example-spacer {
+	flex: 1 1 auto;
+}
+
+/* Small niceties for the icon buttons */
+.example-icon {
+	margin: 0 4px;
+}
+
+.favorite-icon {
+	color: #e91e63;
+}
+
+/* Layout for dashboard with left sidebar */
+.dashboard-layout {
+	display: flex;
+	align-items: flex-start;
+	/* width: 100%; */
+	min-height: calc(100vh - var(--toolbar-height));
+	/* reserve space for fixed sidebar on wide screens */
+	margin-left: 0;
+}
+
+.sidebar {
+	width: 240px;
+	box-sizing: border-box;
+	border-right: 1px solid rgba(0,0,0,0.08);
+	/* default for small screens: flow layout (non-fixed) */
+	position: relative;
+	overflow: hidden;
+	height: auto;
+}
+
+/* On larger screens make the sidebar fixed so it fills from toolbar to bottom */
+@media (min-width: 600px) {
+  .sidebar {
+    position: fixed;
+    top: var(--toolbar-height);
+    bottom: 0;
+    left: 0;
+    height: auto;
+    overflow: auto;
+  }
+
+  /* push the main layout content to the right to avoid overlap */
+  .dashboard-layout {
+    margin-left: 240px;
+  }
+}
+
+/* Mobile adjustments: ensure sidebar sits below toolbar and fills remaining height */
+@media (max-width: 599px) {
+  .sidebar {
+    position: sticky;
+    top: var(--toolbar-height-mobile);
+    height: calc(100vh - var(--toolbar-height-mobile));
+    overflow: auto;
+  }
+}
+
+.content {
+	flex: 1 1 auto;
+	padding: 16px;
+}
+
+/* Elevation for toolbar */
+mat-toolbar {
+	box-shadow: 0 2px 8px rgba(16,24,40,0.08);
+}
+
+/* Improve page background and content card */
+.dashboard-layout {
+	background: transparent;
+}
+
+.content .card {
+	background: var(--color-surface);
+	border-radius: 10px;
+	padding: 20px;
+	box-shadow: 0 8px 24px rgba(16,24,40,0.06);
+}
